@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MYCROFT_LOGDIR="$HOME/.mycroft/logs"
+if [ ! -e $MYCROFT_LOGDIR ] ; then
+  mkdir $MYCROFT_LOGDIR
+fi
+
+mycroft-messagebus > $MYCROFT_LOGDIR/bus.log &
+sleep 1
+mycroft-speech-client > $MYCROFT_LOGDIR/voice.log &
+mycroft-audio > $MYCROFT_LOGDIR/audio.log &
+mycroft-skills > $MYCROFT_LOGDIR/skills.log &

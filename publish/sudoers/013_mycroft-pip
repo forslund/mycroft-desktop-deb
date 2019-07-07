@@ -1,0 +1,3 @@
+ALL ALL=(ALL) NOPASSWD: /opt/venvs/mycroft-core/bin/python -m pip install *
+ALL ALL=(ALL) NOPASSWD: /opt/venvs/mycroft-core/bin/python3 -m pip install *
+ALL ALL=(ALL) NOPASSWD: /opt/venvs/mycroft-core/bin/python3.? -m pip install *

@@ -1,0 +1,14 @@
+bins/mycroft-cli-client usr/bin
+bins/mycroft-speech-client usr/bin
+bins/mycroft-enclosure-client usr/bin
+bins/mycroft-messagebus usr/bin
+bins/mycroft-audio usr/bin
+bins/mycroft-skills usr/bin
+bins/mycroft-all usr/bin
+bins/mycroft-pip usr/bin
+bins/mycroft-help usr/bin
+bins/mycroft-mic-test usr/bin
+bins/mycroft-say-to usr/bin
+bins/mycroft-speak usr/bin
+bins/msm usr/bin
+bins/msk usr/bin

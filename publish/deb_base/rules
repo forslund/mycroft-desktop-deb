@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+override_dh_shlibdeps:
+	dh_shlibdeps -l%%DEB_DIR%%/debian/mycroft-core/opt/venvs/mycroft-core/lib/python3.6/site-packages/PIL/.libs --exclude="flac-"
+
+override_dh_strip:
+	dh_strip --exclude=PIL --exclude="flac-"
+	# if arch is armhf the flac-* files in the virtualenv could be deleted
+	# to save ~5.5 MB in the package
+
+override_dh_virtualenv:
+	dh_virtualenv --upgrade-pip --extra-pip-arg "--no-cache-dir" --python /usr/bin/python3
+
+%:
+	dh $@ --with python-virtualenv --python /usr/bin/python3

@@ -1,0 +1,12 @@
+Source: mycroft-core
+Section: python
+Priority: extra
+Maintainer: Mycroft AI <devs@mycroft.ai>
+Build-Depends: debhelper (>= 9), python, dh-virtualenv (>= 0.7)
+Standards-Version: 3.9.5
+
+Package: %%PACKAGE%%
+Architecture: %%ARCHITECTURE%%
+Depends: %%DEPENDS%%
+Replaces: mycroft-core, msm
+Description: %%DESCRIPTION%%

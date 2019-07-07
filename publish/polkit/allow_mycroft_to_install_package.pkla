@@ -1,0 +1,6 @@
+[Allow mycroft to install packages using packagekit]
+Identity=unix-user:mycroft
+Action=org.freedesktop.packagekit.package-install;org.freedesktop.packagekit.package-install-untrusted
+ResultAny=yes
+ResultActive=yes
+ResultInactive=yes

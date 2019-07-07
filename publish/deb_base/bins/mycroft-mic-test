@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Copyright 2018 Mycroft AI Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+restart=0
+
+# Stopping any active Mycroft voice service...
+if sudo /etc/init.d/mycroft-speech-client stop ; then
+    restart=1
+fi
+
+if sudo /etc/init.d/mycroft-audio stop ; then
+    restart=1
+fi
+
+# Launch the standard audiotest
+/opt/venvs/mycroft-core/bin/mycroft-audio-test
+
+if [ $restart == 1 ]
+then
+    echo "Restarting Mycroft voice service..."
+    sudo /etc/init.d/mycroft-speech-client start
+    sudo /etc/init.d/mycroft-audio start
+fi
