@@ -1,0 +1,10 @@
+FROM ubuntu:18.04
+
+RUN apt-get update && \
+    apt-get install -y git sudo
+
+COPY . ./mycroft-packaging
+ENV LIBPYTHON python3.6
+WORKDIR ./mycroft-packaging/publish
+RUN ../dependencies.sh
+ENTRYPOINT ["bash", "-c", "./publish.sh release && cp ../*deb /host/"]
