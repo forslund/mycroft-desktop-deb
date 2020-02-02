@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
+LIBPYTHON ?= %%PYTHON%%
 override_dh_shlibdeps:
-	dh_shlibdeps -l%%DEB_DIR%%/debian/mycroft-core/opt/venvs/mycroft-core/lib/python3.6/site-packages/PIL/.libs --exclude="flac-"
+	dh_shlibdeps -l%%DEB_DIR%%/debian/mycroft-core/opt/venvs/mycroft-core/lib/$(LIBPYTHON)/site-packages/PIL/.libs --exclude="flac-"
 
 override_dh_strip:
 	dh_strip --exclude=PIL --exclude="flac-"
