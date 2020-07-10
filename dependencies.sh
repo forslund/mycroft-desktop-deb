@@ -9,4 +9,5 @@ sudo apt-get install -y \
     python3-dev \
     libfann-dev \
     dh-virtualenv \
-    debhelper
+    debhelper \
+    fakeroot
