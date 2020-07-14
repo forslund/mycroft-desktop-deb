@@ -1,0 +1,13 @@
+Source: mycroft-mark-2
+Section: main
+Priority: optional
+Maintainer: Åke Forslund <ake.forslund@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 1.0
+Homepage: https://github.com/forslund/mycroft-desktop-deb
+
+Package: mycroft-mark-2
+Architecture: all
+Depends: mycroft-core
+Description: Mycroft Mark 2 System
+ Startup files for Mycroft Mark 2.

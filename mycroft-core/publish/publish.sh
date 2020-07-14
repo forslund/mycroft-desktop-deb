@@ -227,8 +227,6 @@ else
   echo "Setting up sudo privileges"
   cp -r ${TOP}/publish/sudoers ${DEB_DIR}/
   echo "sudoers/013_mycroft-pip etc/sudoers.d/" >> ${DEB_DIR}/debian/install
-  cp ${TOP}/publish/deb_base/mycroft.conf ${DEB_DIR}
-  echo "mycroft.conf etc/mycroft/" >> ${DEB_DIR}/debian/install
 fi
 
 #echo "Setting up polkit power permissions file"
