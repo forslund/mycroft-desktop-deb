@@ -1,8 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-mycroft-messagebus & >> /var/log/mycorft/bus.log
-mycroft-skills & >> /var/log/mycroft/skills.log
-mycroft-speech-client & >> /var/log/mycroft/voice.log
-mycroft-audio & >> /var/log/mycroft/audio.log
-mycroft-enclosure-client & >> /var/log/mycroft/enclosure.log
+LOG_DIR=/var/log/mycroft
+
+mycroft-messagebus &>> $LOG_DIR/bus.log &
+mycroft-skills &>> $LOG_DIR/skills.log &
+mycroft-speech-client &>> $LOG_DIR/voice.log &
+mycroft-audio &>> $LOG_DIR/audio.log &
+mycroft-enclosure-client &>> $LOG_DIR/enclosure.log &
 sleep 10
