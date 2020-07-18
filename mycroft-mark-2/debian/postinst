@@ -6,5 +6,11 @@ echo "Reloading Library Database"
 ldconfig
 
 if ! grep -q "MYCROFT_START_CMD" /etc/environment ; then
+	echo "Adding custom Mycroft start command"
 	echo "MYCROFT_START_CMD=mycroft-start-all" >> /etc/environment
+fi
+
+if ! grep -q "MYCROFT_STOP_CMD" /etc/environment ; then
+	echo "Adding custom Mycroft stop command"
+	echo "MYCROFT_STOP_CMD=mycroft-stop-all" >> /etc/environment
 fi
