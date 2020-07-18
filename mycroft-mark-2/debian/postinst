@@ -14,3 +14,8 @@ if ! grep -q "MYCROFT_STOP_CMD" /etc/environment ; then
 	echo "Adding custom Mycroft stop command"
 	echo "MYCROFT_STOP_CMD=mycroft-stop-all" >> /etc/environment
 fi
+
+echo "Restarting display service"
+systemctl stop sddm
+mycroft-stop-all
+systemctl start sddm
