@@ -1,2 +1,2 @@
-mycroft-start-all	/usr/bin
-mycroft-stop-all	/usr/bin
+scripts/*		/usr/share/mycroft-systemd
+services/*		/lib/systemd/system

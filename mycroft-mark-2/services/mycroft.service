@@ -1,0 +1,12 @@
+[Unit]
+Description=Mycroft A.I. Software stack.
+After=sddm.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/true
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sddm.service
+

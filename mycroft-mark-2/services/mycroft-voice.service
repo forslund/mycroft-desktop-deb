@@ -1,0 +1,26 @@
+[Unit]
+Description=Mycroft Voice
+PartOf=mycroft.service
+After=mycroft.service
+After=mycroft-messagebus.service
+
+[Service]
+User=mycroft
+Type=notify
+WorkingDirectory=/opt/mycroft
+Environment=PYTHONUNBUFFERED=1
+# Hard code runtime dir to connect to Pulse audio
+Environment="XDG_RUNTIME_DIR=/run/user/32011"
+ExecStart=/opt/venvs/mycroft-core/bin/python /usr/share/mycroft-systemd/voice.py
+StandardOutput=append:/var/log/mycroft/voice.log
+StandardError=file:/var/log/mycroft/voice.error.log
+TimeoutStartSec=1m
+TimeoutStopSec=1m
+Restart=on-failure
+StartLimitInterval=5min
+StartLimitBurst=4
+#StartLimitAction=reboot-force
+WatchdogSec=30s
+
+[Install]
+WantedBy=mycroft.service
