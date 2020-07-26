@@ -2,10 +2,10 @@
 
 LIBPYTHON ?= %%PYTHON%%
 override_dh_shlibdeps:
-	dh_shlibdeps -l%%DEB_DIR%%/debian/mycroft-core/opt/venvs/mycroft-core/lib/$(LIBPYTHON)/site-packages/PIL/.libs --exclude="flac-"
+	dh_shlibdeps -l/home/mycroft/mycroft-desktop-deb/mycroft-core/src/mycroft-core/debian/mycroft-core/opt/venvs/mycroft-core/lib/$(LIBPYTHON)/site-packages/PIL/.libs:/usr/lib/aarch64-linux-gnu -Xx86_64 -Xflac-
 
 override_dh_strip:
-	dh_strip --exclude=PIL --exclude="flac-"
+	dh_strip --exclude=PIL --exclude="flac-" --exclude "x86_64-linux-gnu.so"
 	# if arch is armhf the flac-* files in the virtualenv could be deleted
 	# to save ~5.5 MB in the package
 
