@@ -13,7 +13,7 @@ if ! grep -q "MYCROFT_STOP_CMD" /etc/environment ; then
 	echo "MYCROFT_STOP_CMD=sleep 10" >> /etc/environment
 fi
 
-echo "Restarting display service"
+#echo "Restarting display service"
 systemctl enable mycroft-messagebus
 systemctl enable mycroft-voice
 systemctl enable mycroft-skills
@@ -21,7 +21,9 @@ systemctl enable mycroft-enclosure
 systemctl enable mycroft-audio
 systemctl enable mycroft
 
-systemctl stop mycroft
-systemctl stop sddm
-systemctl start sddm
-systemctl start mycroft
+mycroft-pip install sdnotify
+
+#systemctl stop mycroft
+#systemctl stop sddm
+#systemctl start sddm
+#systemctl start mycroft
