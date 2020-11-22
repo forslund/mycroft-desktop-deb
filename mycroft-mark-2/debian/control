@@ -8,6 +8,6 @@ Homepage: https://github.com/forslund/mycroft-desktop-deb
 
 Package: mycroft-mark-2
 Architecture: all
-Depends: mycroft-core, logrotate
+Depends: mycroft-core (>=20.8.0), logrotate
 Description: Mycroft Mark 2 System
  Startup files for Mycroft Mark 2.
