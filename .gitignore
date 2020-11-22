@@ -4,3 +4,6 @@
 *.buildinfo
 *.changes
 *.dsc
+mycroft-mark-2/debian/mycroft-mark-2/*
+*.xz
+.debhelper*
