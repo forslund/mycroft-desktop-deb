@@ -1,7 +1,0 @@
-Format: http://dep.debian.net/deps/dep5
-Upstream-Name: 
-Source: https://github.com/forslund/mycroft-desktop-deb
-
-Files: *
-Copyright: 2020 Åke Forslund <ake.forslund@gmail.com>
-License: Apache-2.0
