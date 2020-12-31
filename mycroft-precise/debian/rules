@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+ARCH := $(shell uname -m)
+PRECISE_DL_URL="https://github.com/MycroftAI/mycroft-precise/releases/download/v0.2.0/precise-engine_0.2.0_${ARCH}.tar.gz"
+%:
+	dh $@
+override_dh_install:
+	echo ${ARCH}
+	curl -L ${PRECISE_DL_URL} -o precise-engine.tar.gz
+	tar -xzvf precise-engine.tar.gz
+
+override_dh_shlibdeps:
+	echo "Overriding shlib deps..."
+
+override_dh_clean:
+	dh_clean
+	rm -rf precise-engine
+	rm -rf precise.tar.gz

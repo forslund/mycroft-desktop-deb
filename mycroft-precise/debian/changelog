@@ -1,0 +1,5 @@
+mycroft-precise (0.2) bionic; urgency=medium
+
+  * Initial packaging for mycroft-precise
+
+ -- Åke Forslund <ake.forslund@gmail.com>  Thu, 31 Dec 2020 11:13:03 +0100

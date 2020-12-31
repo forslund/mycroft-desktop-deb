@@ -1,0 +1,10 @@
+Source: mycroft-precise
+Section: main
+Priority: optional
+Maintainer: Åke Forslund
+Build-Depends: debhelper (>= 9.0.0),
+Standards-Version: 3.9.8
+
+Package: mycroft-precise
+Architecture: any
+Description: Mycroft Ai Precise Wakeword engine
